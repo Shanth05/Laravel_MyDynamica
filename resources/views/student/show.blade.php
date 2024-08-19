@@ -9,7 +9,7 @@
             <th>Nic</th>
             <th>Joined Date</th>
             <th>Gender</th>
-            <th>Designation</th>
+            <th>Grade Name</th>
         </tr>
         <tr>
             <td>{{$student->id}}</td>
@@ -19,7 +19,8 @@
             <td>{{$student->nic}}</td>
             <td>{{$student->joined_date}}</td>
             <td>{{$student->gender}}</td>
-            <td>{{$student->designation}}</td>
+            <td><a href="{{url("grade/$student->id")}}">{{$student->grade->grade_name}}</td>
+
         </tr>
     </table>
     

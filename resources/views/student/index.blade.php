@@ -5,23 +5,16 @@
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            {{-- <th>Date of Birth</th>
-            <th>Nic</th>
-            <th>Joined Date</th>
-            <th>Gender</th>
-            <th>Designation</th> --}}
+            <th>Grade Name</th>
+
         </tr>
     
         @foreach ($students as $student)
         <tr>
-            <td><a href="{{url("student/$student->id")}}">{{$student->id}}</a></td>
+            <td>{{$student->id}}</td>
             <td><a href="{{url("student/$student->id")}}">{{$student->first_name}}</a></td>
-            <td>{{$student->last_name}}</td> 
-            {{-- <td>{{$student->date_of_birth}}</td>
-            <td>{{$student->nic}}</td>
-            <td>{{$student->joined_date}}</td>
-            <td>{{$student->gender}}</td>
-            <td>{{$student->designation}}</td> --}}
+            <td>{{$student->last_name}}</td>
+            <td><a href="{{url("grade/$student->id")}}">{{$student->grade->grade_name}}</td> 
         </tr>
             
         @endforeach
