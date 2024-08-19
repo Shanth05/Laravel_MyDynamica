@@ -1,6 +1,6 @@
 <x-layout>
-
-    <table border="1">
+    <h2><b>Grade & Student Details</b></h2>
+    <table border="1" class="tablegradeshow table-bordered border-primary">
         <tr>
             <th>Group Name</th>
             <th>First Name</th>

@@ -1,0 +1,26 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.tablestudentindex,.tablestudentshow,.tablegradeindex,.tablegradeshow {
+    width: 90%;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+tr:hover {background-color: rgb(224, 210, 205);}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+h2{
+    color: rgb(14, 32, 194);
+   text-align: center;
+}

@@ -1,6 +1,6 @@
 <x-layout>
-
-    <table border="1">
+    <h2><b>Grade Details</b></h2>
+    <table border="1" class="tablegradeindex table-bordered border-primary">
         <tr>
             <th>ID</th>
             <th>Grade Name</th>

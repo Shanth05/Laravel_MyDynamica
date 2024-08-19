@@ -1,6 +1,8 @@
 <x-layout>
 
-    <table border="1">
+    <h2><b>Student Details</b></h2>
+    <br>
+    <table border="1" class="tablestudentindex table-bordered border-primary">
         <tr>
             <th>ID</th>
             <th>First Name</th>
@@ -19,6 +21,5 @@
             
         @endforeach
     </table>
-    
 
 </x-layout>

@@ -1,6 +1,6 @@
 <x-layout>
-    
-    <table border="1">
+    <h2><b>Personal Details</b></h2>
+    <table border="1" class="tablestudentshow table-bordered border-primary">
         <tr>
             <th>ID</th>
             <th>First Name</th>
