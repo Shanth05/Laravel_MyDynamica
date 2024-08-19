@@ -15,8 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('first_name', length: 50);
             $table->string('last_name', length: 50);
+            $table->date('date_of_birth');
+            $table->string('nic', length: 12);
+            $table->date('joined_date');
+            $table->string('gender', length: 50);
+            $table->string('designation', length: 50);
             $table->timestamps();
         });
+
     }
 
     /**
