@@ -23,6 +23,14 @@
 
         </tr>
     </table>
-    
+    <table>
+        @foreach ($student->subject as $subject)
+            <tr>
+                <td>
+                    {{$subject->subject_name}}
+                </td>
+            </tr>
+        @endforeach
+    </table>
     
 </x-layout>

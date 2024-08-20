@@ -24,6 +24,16 @@
             
         @endforeach
     </table>
+
+    <table>
+        @foreach ($grade->subjects as $subject)
+            <tr>
+                <td>
+                    {{$subject->subject_name}}
+                </td>
+            </tr>
+        @endforeach
+    </table>
 </x-layout> 
 
 
