@@ -1,5 +1,6 @@
 <x-layout>
     <h2><b>Grade & Student Details</b></h2>
+    <h3><ul>{{$grade->grade_name}} Students</ul></h3>
     <table border="1" class="tablegradeshow table-bordered border-primary">
         <tr>
             <th>Group Name</th>
@@ -12,8 +13,8 @@
     
         @foreach ($students as $student)
         <tr>
-            <td><a href="{{url("student/$grade->id")}}">{{$student->grade->grade_name}}</td>
-            <td><a href="{{url("student/$grade->id")}}">{{$student->first_name}}</a></td>
+            <td><a href="{{url("student/$grade->grade_name")}}">{{$student->grade->grade_name}}</a></td>
+            <td>{{$student->first_name}}</td>
             <td>{{$student->last_name}}</td>   
             <td>{{$student->nic}}</td>
             <td>{{$student->joined_date}}</td>
@@ -23,6 +24,31 @@
             
         @endforeach
     </table>
-    
+</x-layout> 
 
-</x-layout>
+
+
+
+
+
+   
+    {{-- <table border="1">
+        <tr>
+            <th>firstname</th>
+        <th>lastname</th>
+       </tr>
+    @foreach ($students as $student)
+    <tr>
+        <td><a href="{{url("students/$student->id")}}">{{$student->firstname}}</a></td>
+        <td>{{$student->lastname}}</td>
+
+    </tr>
+        @endforeach --}}
+
+
+
+
+
+
+
+
