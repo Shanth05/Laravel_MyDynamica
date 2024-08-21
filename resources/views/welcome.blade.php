@@ -10,15 +10,19 @@
 
 </head>
 <body>
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
+    <h2> <button class="btn btn-primary" type="button">Welcome to School Management System</button></h2>
 
-<button type="button" class="btn btn-link">Link</button>
+    <div style="margin-left:900px;">
+        <a href="{{url('/')}}" class="btn btn-primary" mar>Home</a>
+        <a href="{{url('/student')}}" class="btn btn-primary">All Student</a>
+        <a href="{{ url('/grade') }}" class="btn btn-primary">All Grades</a>
+        <a href="{{ url('/subject') }}" class="btn btn-primary">All Subjects</a>
+    </div>
+    
 </body>
 </html>
+
+
+
+    
+    

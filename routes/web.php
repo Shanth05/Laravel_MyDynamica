@@ -2,6 +2,7 @@
 
 use App\Models\Grade;
 use App\Models\Student;
+use App\Models\Subject;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,4 +31,14 @@ Route::get('/grade/{id}', function ($id) {
     return view('grade.show',compact('grade','students'));
 });
 
+// Route to show all subject
+Route::get('/subject', function () {
+    $subjects=Subject::all();
+    return view('subject.index',compact('subjects'));
+});
 
+Route::get('/subject/{id}', function ($id) {
+    $subject = Subject::find($id);
+    $grades = Grade::find($id)->grades;  // ithu relationship routes
+    return view('subject.show', compact('subject', 'grades'));
+});

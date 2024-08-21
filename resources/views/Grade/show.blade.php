@@ -3,7 +3,6 @@
     <h3><ul>{{$grade->grade_name}} Students</ul></h3>
     <table border="1" class="tablegradeshow table-bordered border-primary">
         <tr>
-            <th>Group Name</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Nic</th>
@@ -13,15 +12,12 @@
     
         @foreach ($students as $student)
         <tr>
-            <td><a href="{{url("student/$grade->grade_name")}}">{{$student->grade->grade_name}}</a></td>
             <td>{{$student->first_name}}</td>
             <td>{{$student->last_name}}</td>   
             <td>{{$student->nic}}</td>
             <td>{{$student->joined_date}}</td>
-            <td>{{$student->gender}}</td>
-            
-        </tr>
-            
+            <td>{{$student->gender}}</td>         
+        </tr>           
         @endforeach
     </table>
 

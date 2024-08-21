@@ -29,3 +29,7 @@ h3{
     color: rgb(14, 32, 194);
     text-align: left;
 }
+
+.btn-primary{
+    background-color: rgb(30, 144, 210);
+}

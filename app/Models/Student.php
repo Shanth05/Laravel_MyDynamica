@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use App\Models\Grade;
+use App\Models\Subject;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,8 +10,14 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
-    public function grade()
+
+    public function subjects()
     {
-        return $this->hasMany(Grade::class,'grade_id','id');
+        return $this->belongsToMany(Subject::class);
+    }
+
+        public function grade()
+    {
+        return $this->belongsTo(Grade::class);
     }
 }

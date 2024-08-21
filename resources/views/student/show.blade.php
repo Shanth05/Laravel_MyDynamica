@@ -24,7 +24,7 @@
         </tr>
     </table>
     <table>
-        @foreach ($student->subject as $subject)
+        @foreach ($student->subjects as $subject)
             <tr>
                 <td>
                     {{$subject->subject_name}}

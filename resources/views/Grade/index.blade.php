@@ -4,18 +4,18 @@
         <tr>
             <th>ID</th>
             <th>Grade Name</th>
-            <th>Grade Oder</th>
+            <th>Grade Order</th>
             <th>Grade Group</th>
             <th>Grade Color</th> 
         </tr>
     
         @foreach ($grades as $grade)
         <tr>
-            <td><a href="{{url("grade/$grade->id")}}">{{$grade->grade_name}}</a></td>
-            <td>{{$grade->grade_name}}</td>
-            <td>{{$grade->grade_oder}}</td>
-            <td>{{$grade->grade_color}}</td>
+            <td>{{$grade->id}}</td>
+            <td><a href="{{ url("grade/{$grade->id}") }}">{{ $grade->grade_name }}</a></td> 
+            <td>{{$grade->grade_order}}</td>
             <td>{{$grade->grade_group}}</td>
+            <td>{{$grade->grade_color}}</td>
         </tr>
             
         @endforeach
