@@ -5,14 +5,24 @@ use App\Models\Student;
 use App\Models\Subject;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/student', function () {
     $students=Student::all();
+    
+    // $students = DB::table('students')
+    // ->select('first_name', 'last_name')
+    // ->get();
+    
+    // $students = DB::Student->get();
+    // dd($students);
+
     return view('student.index',compact('students'));
 });
+
 
 Route::get('/student/{id}', function ($id) {
     $student=Student::find($id);
@@ -42,3 +52,4 @@ Route::get('/subject/{id}', function ($id) {
     $grades = Grade::find($id)->grades;  // ithu relationship routes
     return view('subject.show', compact('subject', 'grades'));
 });
+
