@@ -21,15 +21,20 @@
         @endforeach
     </table>
 
-    <table>
+    <h2>Student</h2>
+    <table border="1" class="tablestudentindex table-bordered border-primary">
+        <tr>
+            <th>Student Name</th>
+        </tr>
         @foreach ($grade->subjects as $subject)
             <tr>
                 <td>
-                    {{$subject->subject_name}}
+                    {{$subject->subject}}
                 </td>
             </tr>
         @endforeach
     </table>
+
 </x-layout> 
 
 

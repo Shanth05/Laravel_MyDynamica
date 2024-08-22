@@ -14,9 +14,9 @@
 
     <div style="margin-left:900px;">
         <a href="{{url('/')}}" class="btn btn-primary" mar>Home</a>
-        <a href="{{url('/student')}}" class="btn btn-primary">All Student</a>
-        <a href="{{ url('/grade') }}" class="btn btn-primary">All Grades</a>
-        <a href="{{ url('/subject') }}" class="btn btn-primary">All Subjects</a>
+        <a href="{{url('/student')}}" class="btn btn-primary">Students</a>
+        <a href="{{ url('/grade') }}" class="btn btn-primary">Grades</a>
+        <a href="{{ url('/subject') }}" class="btn btn-primary">ubjects</a>
     </div>
     
 </body>

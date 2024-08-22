@@ -26,29 +26,31 @@
 
 
 <h2>Grades</h2>
-<table border="1" class="tablestudentindex table-bordered border-primary">
+<table border="1" class="subjectshow">
     <tr>
     <th>Grade Name</th>
     <th>Grade Order</th>
     </tr>
+
     @foreach ($subject->grades as $grade)
         <tr>
         <td>{{ $grade->grade_name }}</td>
         <td>{{ $grade->grade_order }}</td>
         </tr>
     @endforeach
+
 </table>
 
-    <h2>Student</h2>
-<table border="1" class="tablestudentindex table-bordered border-primary">
+<h2>Students</h2>
+<table border="1" class="subjectshow">
     <tr>
         <th>Student Name</th>
     </tr>
+
     @foreach ($subject->students as $student)
-    <tr>
-        <td>
-            {{ $student->first_name }}
-        </td>
-    </tr>
+        <tr>
+            <td>{{ $student->first_name }}</td>
+        </tr>
     @endforeach
+
 </table>
