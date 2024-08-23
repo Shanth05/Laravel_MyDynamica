@@ -4,9 +4,9 @@
 
 <div style="margin-left:900px;">
     <a href="{{url('/')}}" class="btn btn-primary">Home</a>
-    <a href="{{url('/student')}}" class="btn btn-primary">Students</a>
-    <a href="{{ url('/grade') }}" class="btn btn-primary">Grades</a>
-    <a href="{{ url('/subject') }}" class="btn btn-primary">Subjects</a>
+    <a href="{{url('/students')}}" class="btn btn-primary">Students</a>
+    <a href="{{ url('/grades') }}" class="btn btn-primary">Grades</a>
+    <a href="{{ url('/subjects') }}" class="btn btn-primary">Subjects</a>
 </div>
 
 <table border="1">

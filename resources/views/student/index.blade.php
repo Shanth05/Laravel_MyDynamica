@@ -15,14 +15,14 @@
     @foreach ($students as $student)
         <tr>
             <td>{{ $student->id }}</td>
-            <td><a href="{{ url("student/{$student->id}") }}">{{ $student->first_name }}</a></td>
+            <td><a href="{{ url("students/{$student->id}") }}">{{ $student->first_name }}</a></td>
             <td>{{ $student->last_name }}</td>
-            <td><a href="{{ url("grade/{$student->grade_id}") }}">{{ $student->grade->grade_name }}</a></td>
+            <td><a href="{{ url("grades/{$student->grade_id}") }}">{{ $student->grade->grade_name }}</a></td>
            
             <td>
                 
                         @foreach ($student->subjects as $subject)
-                        <a href="{{ url("subject/{$subject->id}") }}">
+                        <a href="{{ url("subjects/{$subject->id}") }}">
                             {{$subject->subject}}</a>,
                             
                         @endforeach
