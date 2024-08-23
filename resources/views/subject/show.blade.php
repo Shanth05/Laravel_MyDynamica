@@ -1,6 +1,6 @@
 <x-layout>
 
-    <h2>{{ $subject->subject_name }} Subject Details</h2>
+    <h2>{{ $subject->subject }} Details</h2>
 
     <table border="1" class="tablestudentindex table-bordered border-primary">
         <tr>
@@ -34,7 +34,7 @@
 
     @foreach ($subject->grades as $grade)
         <tr>
-        <td>{{ $grade->grade_name }}</td>
+        <td><a href="{{url("/grade/$grade->id")}}">{{ $grade->grade_name }}</a></td>
         <td>{{ $grade->grade_order }}</td>
         </tr>
     @endforeach
@@ -42,15 +42,20 @@
 </table>
 
 <h2>Students</h2>
-<table border="1" class="subjectshow">
-    <tr>
-        <th>Student Name</th>
-    </tr>
 
-    @foreach ($subject->students as $student)
+    <table border="1" class="subjectshow">
         <tr>
-            <td>{{ $student->first_name }}</td>
+            <th>Student Name</th>
         </tr>
-    @endforeach
 
-</table>
+        @foreach ($subject->students as $student)
+            <tr>
+                <td>
+                    <a href="{{url("/student/$student->id")}}">
+                        {{ $student->first_name }}
+                    </a>   
+                </td>
+            </tr>
+        @endforeach
+
+    </table>

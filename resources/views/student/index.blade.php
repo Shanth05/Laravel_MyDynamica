@@ -19,7 +19,15 @@
             <td>{{ $student->last_name }}</td>
             <td><a href="{{ url("grade/{$student->grade_id}") }}">{{ $student->grade->grade_name }}</a></td>
            
-            <td><a href="{{ url("subject/{$student->grade_id}") }}">{{ $student->grade->grade_name }}</a></td> 
+            <td>
+                
+                        @foreach ($student->subjects as $subject)
+                        <a href="{{ url("subject/{$subject->id}") }}">
+                            {{$subject->subject}}</a>,
+                            
+                        @endforeach
+          
+            </td> 
  
         </tr>  
     @endforeach

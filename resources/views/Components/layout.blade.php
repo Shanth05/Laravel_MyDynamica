@@ -1,5 +1,5 @@
 <h2> 
-    <button class="btn btn-primary" type="button">Welcome to School Management System</button>
+    {{-- <button class="btn btn-primary" type="button">Welcome to School Management System</button> --}}
 </h2>
 
 <div style="margin-left:900px;">

@@ -1,5 +1,5 @@
 <x-layout>
-    <h2><b>Personal Details</b></h2>
+    <h2><b>{{$student->last_name}} Details</b></h2>
     <table border="1" class="tablestudentshow table-bordered border-primary">
         <tr>
             <th>ID</th>
@@ -23,14 +23,22 @@
 
         </tr>
     </table>
-    <table>
-        @foreach ($student->subjects as $subject)
-            <tr>
-                <td>
-                    {{$subject->subject_name}}
-                </td>
-            </tr>
-        @endforeach
-    </table>
+
+
+<h2>Subject</h2>
+<table border="1" class="subjectshow">
+    <tr>
+        <th>Subject Name</th>
+    </tr>
+
+    @foreach ($student->subjects as $subject)
+    <tr>
+        <td>
+            <a href="{{url("/subject/$subject->id")}}">{{$subject->subject}}</a>
+        </td>
+    </tr>
+@endforeach
+
+</table>
     
 </x-layout>
