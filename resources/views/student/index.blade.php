@@ -1,6 +1,11 @@
 <x-layout>
 
     <h2><b>Student Details</b></h2>
+
+        {{-- {{$students->currentPage()}} <br>
+        {{$students->count()}} --}}
+    
+
     <br>
     <table border="1" class="tablestudentindex table-bordered border-primary">
         <tr>
@@ -33,6 +38,11 @@
     @endforeach
 
     </table>
+
+
+    {{$students->links()}}
+
+
     {{-- @foreach ($students->subjects as $student)
     <tr>
         <td>{{ $student->subject}}</td>
