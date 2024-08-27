@@ -7,48 +7,41 @@
     
 
     <br>
-    <table border="1" class="tablestudentindex table-bordered border-primary">
-        <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Grade</th>
-            <th>Subject</th>
 
-        </tr>
-    
-    @foreach ($students as $student)
-        <tr>
-            <td>{{ $student->id }}</td>
-            <td><a href="{{ url("students/{$student->id}") }}">{{ $student->first_name }}</a></td>
-            <td>{{ $student->last_name }}</td>
-            <td><a href="{{ url("grades/{$student->grade_id}") }}">{{ $student->grade->grade_name }}</a></td>
-           
-            <td>
-                
-                        @foreach ($student->subjects as $subject)
-                        <a href="{{ url("subjects/{$subject->id}") }}">
-                            {{$subject->subject}}</a>,
-                            
-                        @endforeach
-          
-            </td> 
- 
-        </tr>  
-    @endforeach
-
-    </table>
-
-
-    {{$students->links()}}
-
-
-    {{-- @foreach ($students->subjects as $student)
-    <tr>
-        <td>{{ $student->subject}}</td>
-        
-
-    </tr>  
-@endforeach --}}
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            DataTable Example
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Grade</th>
+                        <th>Show</th>
+            
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($students as $student)
+                    <tr>
+                        <td>{{ $student->id }}</td>
+                        <td>{{ $student->first_name }}</td>
+                        <td>{{ $student->last_name }}</td>
+                        <td><a href="{{ url("grades/{$student->grade_id}") }}">{{ $student->grade->grade_name }}</a></td>
+                       
+                        <td>
+                            <a href="{{ url("students/{$student->id}") }}">show</a>
+                        </td> 
+             
+                    </tr>  
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </x-layout>

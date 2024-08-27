@@ -15,7 +15,7 @@ class StudentController extends Controller
         // $name = $request->query('page');
         // dd($name);
 
-        $students=Student::paginate(20);
+        $students=Student::all();
     return view('student.index',compact('students'));
     
     }
