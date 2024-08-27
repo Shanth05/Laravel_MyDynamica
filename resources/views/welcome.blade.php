@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-primary text-white mb-4">
-                        <div class="card-body">Students &nbsp&nbsp&nbsp&nbsp&nbsp{{$students->total()}}</div>
+                        <div class="card-body"> Students &nbsp <h4> {{$students->total()}} </h4></div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="/students">View Details</a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-warning text-white mb-4">
-                        <div class="card-body">Subject</div>
+                        <div class="card-body">Subject  &nbsp <h4> {{$subjects->total()}} </h4></div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="/subjects">View Details</a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-success text-white mb-4">
-                        <div class="card-body">Grade</div>
+                        <div class="card-body">Grade  &nbsp <h4> {{$grades->total()}} </h4></div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="grades">View Details</a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>

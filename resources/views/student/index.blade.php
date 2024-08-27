@@ -21,7 +21,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Grade</th>
-                        <th>Show</th>
+                        <th>Click</th>
             
                     </tr>
                 </thead>

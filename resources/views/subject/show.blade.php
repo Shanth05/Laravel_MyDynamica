@@ -10,7 +10,7 @@
             {{-- <th>Grade Name</th> --}}
         </tr>   
         <tr>
-            <td>{{ $subject->subject }}</td>
+            <td>{{ $subject->subject_name}}</td>
             <td>{{ $subject->subject_order }}</td>
             <td>{{ $subject->color }}</td>
             {{-- <th>{{ $grade->grade_name }}</th> --}}

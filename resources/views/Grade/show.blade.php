@@ -4,18 +4,13 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Nic</th>
-            <th>Joined Date</th>
-            <th>Gender</th>
+
         </tr>
     
         @foreach ($students as $student)
         <tr>
             <td><a href="{{url("/student/$student->id")}}">{{$student->first_name}}</a></td>
-            <td>{{$student->last_name}}</td>   
-            <td>{{$student->nic}}</td>
-            <td>{{$student->joined_date}}</td>
-            <td>{{$student->gender}}</td>         
+            <td>{{$student->last_name}}</td>        
         </tr>           
         @endforeach
     </table>
@@ -34,7 +29,7 @@
                 <td>{{ $subject->id }}</a></td>
                 <td>
                     <a href="{{url("/subject/$subject->id")}}">
-                        {{$subject->subject}}
+                        {{$subject->subject_name}}
                     </a>
                 </td>
                 <td>{{ $subject->subject_order }}</td>
