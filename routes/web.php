@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    $students=Student::paginate();
-    $subjects=Student::paginate();
-    $grades=Student::paginate();
+    $students=Student::paginate(15);
+    $subjects=Subject::paginate(15);
+    $grades=Grade::paginate(15);
     return view('welcome',compact('students','subjects','grades'));
 });
 

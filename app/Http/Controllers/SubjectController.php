@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Subject;
+use App\Models\Grade;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -36,7 +37,9 @@ class SubjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $subject=Subject::find($id);
+        return view('subject.show',compact('subject'));
+
     }
 
     /**

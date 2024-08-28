@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Grade;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
@@ -36,7 +37,18 @@ class GradeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $grade=Grade::find($id);
+        $students = Grade::find($id)->students;
+        return view('grade.show',compact('grade','students'));
+        
+
+        // // Fetch the grade by ID
+        // $grade = Grade::with('students', 'subjects')->findOrFail($id);
+
+        // // Assuming $grade->students gives you the related students for that grade
+        // $students = $grade->students;
+
+        // return view('Grade.show', compact('grade', 'students'));
     }
 
     /**
