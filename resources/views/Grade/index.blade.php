@@ -53,7 +53,7 @@
             <div class="container-fluid px-4">
                 <br>
                 <div class="card mb-4 shadow-sm">
-                    <div class="card-header bg-info text-white">
+                    <div class="card-header bg-success text-white">
                         <i class="fas fa-table me-1"></i>
                         DataTable Example
                     </div>

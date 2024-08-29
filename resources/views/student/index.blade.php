@@ -1,10 +1,8 @@
-
- 
-    {{-- <h2><b>Student Details</b></h2>
+{{-- <h2><b>Student Details</b></h2>
 
         {{-- {{$students->currentPage()}} <br>
         {{$students->count()}} --}}
-    
+
 
 {{-- <br>
 
@@ -50,7 +48,7 @@
     <div class="container-fluid px-4">
         <h2 class="mt-4"><b>Student Details</b></h2>
         <br>
-        
+
         <div class="card mb-4 shadow-sm">
             <div class="card-header bg-info text-white">
                 <i class="fas fa-table me-1"></i>
@@ -70,21 +68,22 @@
                         </thead>
                         <tbody>
                             @foreach ($students as $student)
-                            <tr>
-                                <td>{{ $student->id }}</td>
-                                <td>{{ $student->first_name }}</td>
-                                <td>{{ $student->last_name }}</td>
-                                <td>
-                                    <a href="{{ url("grades/{$student->grade_id}") }}" class="text-decoration-none text-dark">
-                                        {{ $student->grade->grade_name }}
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ url("students/{$student->id}") }}" class="btn btn-sm btn-primary">
-                                        Show
-                                    </a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $student->id }}</td>
+                                    <td>{{ $student->first_name }}</td>
+                                    <td>{{ $student->last_name }}</td>
+                                    <td>
+                                        <a href="{{ url("grades/{$student->grade_id}") }}"
+                                            class="text-decoration-none text-dark">
+                                            {{ $student->grade->grade_name }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ url("students/{$student->id}") }}" class="btn btn-sm btn-primary">
+                                            Show
+                                        </a>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>

@@ -124,7 +124,7 @@
         <div class="container-fluid px-4">
             <h3 class="mt-4">{{ $student->last_name }} Details</h3>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Dashboard</li>
+                <li class="breadcrumb-item active"><a href="/">Dashboard / <a href="/students"> Students </a> / {{$student->first_name}}</a></li>
             </ol>
             <div class="row">
                 <!-- Grade Details Section -->
