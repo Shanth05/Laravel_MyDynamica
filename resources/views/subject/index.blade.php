@@ -50,7 +50,7 @@
             <h1 class="mt-4">Subject Details</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">
-                    <a href='/'>Dashboard</a> / Subject
+                    <a href='/'>Dashboard</a> / Student
                 </li>
             </ol>
             <div class="container-fluid px-4">

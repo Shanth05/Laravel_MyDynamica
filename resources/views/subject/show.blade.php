@@ -130,7 +130,7 @@
                                     @foreach ($subject->students as $student)
                                         <tr>
                                             <td>
-                                                <a href="{{ url("/student/$student->id") }}" class="text-decoration-none text-dark">
+                                                <a href="{{ url("/students/$student->id") }}" class="text-decoration-none text-dark">
                                                     {{ $student->first_name }}
                                                 </a>
                                             </td>

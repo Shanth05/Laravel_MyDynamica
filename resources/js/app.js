@@ -7,3 +7,8 @@ import './chart-bar-demo';
 import './chart-pie-demo';
 import './datatables-demo';
 
+
+import.meta.glob([
+    '../images/**'
+  ]);
+
