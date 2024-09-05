@@ -59,7 +59,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="datatablesSimple" class="table table-hover table-striped table-bordered">
+                            <table id="datatablesSimple" class="table table-hover table-dark">
                                 <thead class="table-warning">
                                     <tr>
                                         <th>ID</th>
@@ -75,7 +75,7 @@
                                             <td>{{ $grade->id }}</td>
                                             <td>
                                                 <a href="{{ url("grades/{$grade->id}") }}"
-                                                    class="text-decoration-none text-dark">
+                                                    class="text-decoration-none">
                                                     {{ $grade->grade_name }}
                                                 </a>
                                             </td>

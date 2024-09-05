@@ -57,7 +57,7 @@
                 </div>
             </nav>
         </div>
-        <div id="layoutSidenav_content">
+        <div id="layoutSidenav_content" style="background-color: rgb(48, 49, 50)">
             {{ $slot }}
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">

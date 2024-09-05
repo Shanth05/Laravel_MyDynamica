@@ -61,7 +61,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="datatablesSimple" class="table table-hover table-striped table-bordered">
+                            <table id="datatablesSimple" class="table table-hover table-striped table-bordered table-dark">
                                 <thead class="table-primary">
                                     <tr>
                                         <th>ID</th>

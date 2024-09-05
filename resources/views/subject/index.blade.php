@@ -63,7 +63,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="datatablesSimple" class="table table-hover table-striped table-bordered">
+                            <table id="datatablesSimple" class="table table-hover table-striped table-bordered table-dark">
                                 <thead class="table-danger">
                                     <tr>
                                         <th>ID</th>
@@ -79,13 +79,13 @@
                                             <td>{{ $subject->id }}</td>
                                             <td>
                                                 <a href="{{ url("subjects/{$subject->id}") }}"
-                                                    class="text-decoration-none text-dark">
+                                                    class="text-decoration-none">
                                                     {{ $subject->subject_name }}
                                                 </a>
                                             </td>
                                             <td>
                                                 <a href="{{ url("subjects/{$subject->id}") }}"
-                                                    class="text-decoration-none text-dark">
+                                                    class="text-decoration-none">
                                                     {{ $subject->subject_order }}
                                                 </a>
                                             </td>
