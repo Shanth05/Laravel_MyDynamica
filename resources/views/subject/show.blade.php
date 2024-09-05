@@ -81,7 +81,7 @@
                     <div class="card mb-4 shadow-sm">
                         <div class="card-header bg-primary text-white">
                             <i class="fas fa-chart-area me-1"></i>
-                            Grade Details
+                            Grade Details 
                         </div>
                         <div class="card-body">
                             <table class="table table-hover table-striped table-bordered">

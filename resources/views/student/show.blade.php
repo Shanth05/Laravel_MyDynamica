@@ -132,30 +132,24 @@
                     <div class="card mb-4 shadow-sm">
                         <div class="card-header bg-primary text-white">
                             <i class="fas fa-chart-area me-1"></i>
-                            Grade Details
+                            Student Information
                         </div>
                         <div class="card-body">
                             <table class="table table-hover table-striped table-bordered">
-                                <thead class="table-primary">
                                     <tr>
-                                        <th>ID</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Grade Name</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{ $student->id }}</td>
-                                        <td>{{ $student->first_name }}</td>
-                                        <td>{{ $student->last_name }}</td>
-                                        <td>
-                                            <a href="{{ url("grades/$student->grade_id") }}" class="text-decoration-none text-dark">
-                                                {{ $student->grade->grade_name }}
-                                            </a>
+                                        <td colspan="4">
+                                            <div
+                                                style="width:120px;height:120px; border-radious:60px; background-color:aqua">
+                                                <img src="{{ Vite::asset('resources/images/student.jpg') }}" style="width:100%;height:100%;object-fit:cover"
+                                                    class="card-img-center" alt="{{ $student->first_name }}">
+                                            </div>
+                                        </td>
+                                        <td style="padding-left:10px">
+                                            <p>ID&emsp;&emsp; <b>{{ $student->id }}</b></p>
+                                            <p>NAME &emsp; <b>{{ $student->first_name }} {{ $student->last_name }}</b></p>
+                                            <p>GRADE&emsp; <b>{{ $student->grade->grade_name }}</b></p>
                                         </td>
                                     </tr>
-                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -169,26 +163,23 @@
                             Subject Details
                         </div>
                         <div class="card-body">
-                            <table class="table table-hover table-striped table-bordered">
-                                <thead class="table-success">
-                                    <tr>
-                                        <th>Subject Name</th>
-                                        <th>Subject Order</th>
-                                        <th>Subject Color</th>
-                                    </tr>
-                                </thead>
                                 <tbody>
-                                    @foreach ($student->subjects as $subject)
-                                        <tr>
-                                            <td>
-                                                <a href="{{ url("/subjects/$subject->id") }}" class="text-decoration-none text-dark">
-                                                    {{ $subject->subject_name }}
+                                    <div class="card-body">
+                                        @if (count($student->subjects) <= 0)
+                                            <h3 style="text-align:center"> No Data!</h3>
+                                        @endif
+                                        @foreach ($student->subjects as $subject)
+                                            <div class="card mb-4"
+                                                style="margin-right: 10px 10px; box-shadow: 1px 1px 20px black ;border-radius:20px">
+                                                <a href="/subjects/{{ $subject->id }}" class="student-list"
+                                                    style="text-decoration: none">
+                                                    <div class="card-body">
+                                                        <li class="list-group-item"><b>{{ $subject->subject_name }}</b></li>
+                                                    </div>
                                                 </a>
-                                            </td>
-                                            <td>{{ $subject->subject_order }}</td>
-                                            <td>{{ $subject->color }}</td>
-                                        </tr>
-                                    @endforeach
+                                            </div>
+                                        @endforeach
+                                    </div>
                                 </tbody>
                             </table>
                         </div>
