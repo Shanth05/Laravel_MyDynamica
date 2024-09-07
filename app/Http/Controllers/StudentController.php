@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Student;
+use App\Models\Grade;
+
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -15,8 +17,8 @@ class StudentController extends Controller
         // $name = $request->query('page');
         // dd($name);
 
-        $students=Student::all();
-    return view('student.index',compact('students'));
+        $students=Student::paginate(15);
+        return view('student.index',compact('students'));
     
     }
 
@@ -25,8 +27,9 @@ class StudentController extends Controller
      */
     public function create()
     {
+        $grades=Grade::pluck('grade_name','id');
 
-        return view ("student.create");
+        return view ('student.create',compact('grades'));
     }
 
     /**
@@ -62,6 +65,9 @@ class StudentController extends Controller
     public function edit(string $id)
     {
         //
+        $student=Student::find($id);        
+        $grades=Grade::pluck('grade_name','id');
+        return view ('student.edit',compact('grades','student'));
     }
 
     /**
@@ -70,6 +76,12 @@ class StudentController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $student =Student::find($id);
+        $student->first_name=$request ->input('first_name');
+        $student->last_name=$request ->input('last_name');
+        $student->grade_id=$request ->input('grade_id');
+        $student->save();
+        return redirect('students');
     }
 
     /**
@@ -78,5 +90,8 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         //
+        $student =Student::find($id);
+        $student->delete();
+        return redirect('students');
     }
 }

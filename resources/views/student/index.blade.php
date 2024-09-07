@@ -88,6 +88,20 @@
                                                     class="btn btn-sm btn-primary">
                                                     Show
                                                 </a>
+                                            <td>
+                                            <td>
+                                                <a href="{{ url("students/{$student->id}/edit") }}"
+                                                    class="btn btn-sm btn-primary">
+                                                    Edit
+                                                </a>
+                                            <td>
+                                                <form action="/students/{{$student->id}}" method="post">
+                                                    @method('delete')
+                                                    @csrf
+                                                   
+                                                    <input type="submit" value="delete" class="btn btn-sm btn-danger" onclick=" return confirm('Are you sure?')">                                    
+                                                </form>
+                                            </td>
                                             </td>
                                         </tr>
                                     @endforeach
