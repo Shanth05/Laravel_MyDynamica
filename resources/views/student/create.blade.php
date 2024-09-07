@@ -1,7 +1,20 @@
 <x-layout>
 
-    <form action="/students" method="POST">
-        <input type="submit"/> @csrf
+    <form action="/students" method="post">
+        @csrf
+        <label type="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name">
+        <br>
+        <label type="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name">
+        <br>
+        <label type="grade_id">Grade Id</label>
+        <input type="text" id="last_name" name="grade_id">
+
+
+        <input type="submit">
+
+       
     </form>
 
     {{-- <!DOCTYPE html>
