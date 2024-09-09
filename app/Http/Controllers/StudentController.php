@@ -30,6 +30,7 @@ class StudentController extends Controller
         $grades=Grade::pluck('grade_name','id');
 
         return view ('student.create',compact('grades'));
+        
     }
 
     /**
@@ -43,6 +44,7 @@ class StudentController extends Controller
         $student->grade_id=$request ->input('grade_id');
 
         $student->save();
+        return redirect('students');
     }
 
     /**
