@@ -68,7 +68,9 @@
                                         <th>First Name</th>
                                         <th>Last Name</th>
                                         <th>Grade</th>
-                                        <th>Click</th>
+                                        <th>Action</th>
+                                        <th>Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,7 +90,7 @@
                                                     class="btn btn-sm btn-primary">
                                                     Show
                                                 </a>
-                                            <td>
+                                            <t/d>
                                             <td>
                                                 <a href="{{ url("students/{$student->id}/edit") }}"
                                                     class="btn btn-sm btn-primary">

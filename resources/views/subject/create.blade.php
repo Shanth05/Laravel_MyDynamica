@@ -7,18 +7,24 @@
 
         @csrf
         <div>
-            <label type="first_name">First Name</label>
-            <input type="text" id="first_name" name="first_name">
+            <label type="subject_name">Subject Name</label>
+            <input type="text" id="subject_name" name="subject_name">
         </div>
         <br>
 
         <div>
-            <label type="last_name">Last Name</label>
-            <input type="text" id="last_name" name="last_name">
+            <label type="subject_order">Subject Order</label>
+            <input type="text" id="subject_order" name="subject_order">
             <br>
         </div>
 
-        <br>
+        <div>
+            <label type="color">Subject Color</label>
+            <input type="text" id="color" name="color">
+            <br>
+        </div>
+
+        {{-- <br>
         <div>
             <label for="grade_id">Grade Id</label>
             <select id="grade_id" name="grade_id">
@@ -27,7 +33,7 @@
                 @endforeach
             </select>
         </div>
-        <br>
+        <br> --}}
 
 
         <input type="submit" class="btn btn-primary">

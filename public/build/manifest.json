@@ -1,16 +1,37 @@
 {
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff": {
+    "file": "assets/bootstrap-icons-BOrJxbIo.woff",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff"
+  },
+  "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": {
+    "file": "assets/bootstrap-icons-BtvjY1KL.woff2",
+    "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-oxnlCF0e.css",
+    "file": "assets/app-DToJb4dM.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/images/error-404-monochrome.svg": {
+    "file": "assets/error-404-monochrome-DjqjybKj.svg",
+    "src": "resources/images/error-404-monochrome.svg"
+  },
+  "resources/images/logo.jpg": {
+    "file": "assets/logo-DBzjTde2.jpg",
+    "src": "resources/images/logo.jpg"
+  },
+  "resources/images/logo.png": {
+    "file": "assets/logo-J-jG4-4Y.png",
+    "src": "resources/images/logo.png"
+  },
+  "resources/images/student.jpg": {
+    "file": "assets/student-BFSf67QE.jpg",
+    "src": "resources/images/student.jpg"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-CoK14_nF.js",
+    "file": "assets/app-iPYRwi02.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true,
-    "css": [
-      "assets/app-DUEfxN0n.css"
-    ]
+    "isEntry": true
   }
 }

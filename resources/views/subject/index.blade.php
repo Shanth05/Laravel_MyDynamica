@@ -71,6 +71,8 @@
                                         <th>Subject Order</th>
                                         <th>Subject Color</th>
                                         <th>Action</th>
+                                        <th>Action</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,6 +101,18 @@
                                                     class="btn btn-sm btn-primary">
                                                     Show
                                                 </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ url("subjects/{$subject->id}/edit") }}"
+                                                    class="btn btn-sm btn-primary">
+                                                    Edit
+                                                </a>
+                                            <td>
+                                                <form action="/subjects/{{$subject->id}}" method="post">
+                                                    @method('delete')
+                                                    @csrf 
+                                                    <input type="submit" value="delete" class="btn btn-sm btn-danger" onclick=" return confirm('Are you sure?')">                                    
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

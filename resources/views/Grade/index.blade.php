@@ -67,6 +67,10 @@
                                         <th>Grade Group</th>
                                         <th>Grade Order</th>
                                         <th>Grade Color</th>
+                                        <th>Action</th>
+                                        <th>Action</th>
+                                        <th>Action</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,6 +90,24 @@
                                                     style="background-color: {{ $grade->grade_color }};">
                                                     {{ $grade->grade_color }}
                                                 </span>
+                                            </td>
+                                            <td>
+                                                <a href="{{ url("grades/{$grade->id}") }}"
+                                                    class="btn btn-sm btn-primary">
+                                                    Show
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ url("grades/{$grade->id}/edit") }}"
+                                                    class="btn btn-sm btn-primary">
+                                                    Edit
+                                                </a>
+                                            <td>
+                                                <form action="/grades/{{$grade->id}}" method="post">
+                                                    @method('delete')
+                                                    @csrf 
+                                                    <input type="submit" value="delete" class="btn btn-sm btn-danger" onclick=" return confirm('Are you sure?')">                                    
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
