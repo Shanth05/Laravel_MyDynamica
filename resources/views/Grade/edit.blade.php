@@ -1,27 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Edit Students</h1>
-    <form action="/students/{{$student->id}}" method="POST">
-        @csrf
-        @method('put')
-        <label for="first_name">FirstName</label>
-        <input type="text" id="first_name" name="first_name" value="{{$student->first_name}}">
-        <label for="last_name">LastName</label>
-        <input type="text" id="last_name" name="last_name" value="{{$student->last_name}}">
-        <label for="grade_id">GradeName</label>
-      <select id="grade_id" name="grade_id" value={{$student->grade->grade_name}}>
-        @foreach ($grades as $k=>$v)
-        <option value="{{$k}}" {{($k==$student->grade_id)?"selected":""}}>{{$v}}</option>
-        @endforeach
+<x-layout>
+  <h1 style="color: white;">Edit grade</h1>
+  <form Action="/grades/{{$grade->id}}" method="post" style="background-color: #343A40; color: white; padding: 20px; border-radius: 5px;">
+      @csrf
+      @method('put')
+      <label for="grade_name">GradeName</label>
+      <input type="text" name="grade_name" id="grade_name" value="{{$grade->grade_name}}" style="background-color: #212529; color: white; border: 1px solid #CED4DA;">
+      <br><br>
+      <label for="grade_order">GradeOrder</label>
+      <input type="text" name="grade_order" id="grade_order" value="{{$grade->grade_order}}" style="background-color: #212529; color: white; border: 1px solid #CED4DA;">
+      <br><br>
+      <label for="grade_group">Grade group</label>
+      <input type="text" name="grade_group" id="grade_group" value="{{$grade->grade_group}}" style="background-color: #212529; color: white; border: 1px solid #CED4DA;">
+      <br><br>
+      <label for="grade_color">Grade Color</label>
+      <select id="grade_color" name="grade_color" style="background-color:#212529; color:white; border:1px solid #CED4DA;">
+          @foreach ($grade as $k => $v )
+          <option value="{{$k}}" {{ ($k==$grade->grade_color) ? "selected" : "" }}>{{$v}}</option>
+          @endforeach
       </select>
-<input type='submit' value='Update'>
-    </form>
-</body>
-</html>
+      <br><br>
+      <input type="submit" value="Update" style="background-color: #007BFF; color: white; border: none; padding: 10px 20px; border-radius: 5px;">
+  </form>
+</x-layout>

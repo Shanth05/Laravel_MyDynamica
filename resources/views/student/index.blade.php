@@ -87,21 +87,23 @@
                                             </td>
                                             <td>
                                                 <a href="{{ url("students/{$student->id}") }}"
-                                                    class="btn btn-sm btn-primary">
-                                                    Show
+                                                    class="btn btn-sm btn-primary"><i class="bi bi-eye"></i>
+                                    
                                                 </a>
                                             <t/d>
                                             <td>
                                                 <a href="{{ url("students/{$student->id}/edit") }}"
                                                     class="btn btn-sm btn-primary">
-                                                    Edit
+                                                    <i class="bi bi-pencil-square"></i>
                                                 </a>
                                             <td>
                                                 <form action="/students/{{$student->id}}" method="post">
                                                     @method('delete')
                                                     @csrf
                                                    
-                                                    <input type="submit" value="delete" class="btn btn-sm btn-danger" onclick=" return confirm('Are you sure?')">                                    
+                                                    <button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-sm" style="background-color:red; color:white; border:none;">
+                                                        <i class="bi bi-trash3"></i>
+                                                    </button>                               
                                                 </form>
                                             </td>
                                             </td>

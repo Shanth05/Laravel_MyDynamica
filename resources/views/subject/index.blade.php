@@ -93,26 +93,26 @@
                                             </td>
                                             <td>
                                                 <span class="badge" style="background-color: {{ $subject->color }};">
-                                                    {{ $subject->color }}
                                                 </span>
                                             </td>
                                             <td>
                                                 <a href="{{ url("subjects/{$subject->id}") }}"
                                                     class="btn btn-sm btn-primary">
-                                                    Show
+                                                    <i class="bi bi-eye"></i>
                                                 </a>
                                             </td>
                                             <td>
                                                 <a href="{{ url("subjects/{$subject->id}/edit") }}"
                                                     class="btn btn-sm btn-primary">
-                                                    Edit
+                                                    <i class="bi bi-pencil-square"></i>
                                                 </a>
                                             <td>
                                                 <form action="/subjects/{{$subject->id}}" method="post">
                                                     @method('delete')
                                                     @csrf 
-                                                    <input type="submit" value="delete" class="btn btn-sm btn-danger" onclick=" return confirm('Are you sure?')">                                    
-                                                </form>
+                                                    <button type="submit" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-sm" style="background-color:red; color:white; border:none;">
+                                                        <i class="bi bi-trash3"></i>
+                                                    </button>                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

@@ -1,171 +1,63 @@
-{{-- <x-layout>
-
-    <div class="row">
-        <div class="col-xl-6">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-chart-area me-1"></i>
-                    Student Details
-                </div>
-                <div class="card-body">
-                    <table border="1" class="tablegradeshow table-bordered border-primary">
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                
-                        </tr>
-                    
-                        @foreach ($students as $student)
-                        <tr>
-                            <td><a href="{{url("/students/$student->id")}}">{{$student->first_name}}</a></td>
-                            <td>{{$student->last_name}}</td>        
-                        </tr>           
-                        @endforeach
-                    </table>                       
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-6">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-chart-bar me-1"></i>
-                    Subject Details
-                </div>
-                <div class="card-body">
-                    <table border="1" class="tablestudentindex table-bordered border-primary">
-                        <tr>
-                            <th>ID</th>
-                            <th>Subject Name</th>
-                            <th>Subject Order</th>
-                            <th>Subject Color</th>
-                        </tr>
-                
-                        @foreach ($grade->subjects as $subject)
-                            <tr>
-                                <td>{{ $subject->id }}</a></td>
-                                <td>
-                                    <a href="{{url("/subjects/$subject->id")}}">
-                                        {{$subject->subject_name}}
-                                    </a>
-                                </td>
-                                <td>{{ $subject->subject_order }}</td>
-                                <td>{{ $subject->color }}</td>
-                            </tr>
-                        @endforeach
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-xl-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-chart-bar me-1"></i>
-              Grade Details
-            </div>
-            <div class="card-body">
-                <table border="1" class="tablegradeshow table-bordered border-primary">
-                    <tr>
-                        <th>ID</th>
-                        <th>Grade Name</th>
-                        <th>Grade Order</th>
-                        <th>Grade Group</th>
-                        <th>Grade Color</th> 
-                    </tr>
-            
-                    <tr>
-                        <td>{{$grade->id}}</td>
-                        <td>{{ $grade->grade_name }}</td> 
-                        <td>{{$grade->grade_order}}</td>
-                        <td>{{$grade->grade_group}}</td>
-                        <td>{{$grade->grade_color}}</td>
-                    </tr>
-            
-                </table>
-            
-            </div>
-        </div>
-    </div>
-</div>
-</x-layout> 
- --}}
-
 
 <x-layout>
     <main>
-        <div class="container-fluid px-4">
-            <h3 class="mt-4">{{ $grade->grade_name }} Details</h3>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active"> <a href='/'>Dashboard</a> / <a href='/grades'>Grade </a> / {{$grade->grade_name}}</li>
-            </ol>
-            <div class="container my-4">
-                <div class="row">
-                    <div class="col-xl-6 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-header bg-primary text-white">
-                                <i class="fas fa-user me-1"></i>
-                                Student Details
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-hover table-striped table-bordered">
-                                    <thead class="table-primary">
-                                        <tr>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($students as $student)
-                                            <tr>
-                                                <td><a href="{{ url("/students/$student->id") }}"
-                                                        class="text-decoration-none text-dark">{{ $student->first_name }}</a>
-                                                </td>
-                                                <td><a href="{{ url("/students/$student->id") }}"
-                                                        class="text-decoration-none text-dark">{{ $student->last_name }}</a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+        <div class="container-fluid px-4 pt-4">
+            <h1 class="mt-4 text-white">Grade Details</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="/grades" class="text-decoration-none">Grades</a></li>
+        <li class="breadcrumb-item active">{{$grade -> grade_name}}</li>
+    </ol>
+    <div class="row p-4">
+        <div class="col-xl-6">
+            <div class="card mb-4" style="margin-left: 10px; box-shadow: 1px 1px 20px #111111; border-radius: 20px; background-color: #374259;">
+                <div class="card-header">
+                    <i class="bi bi-person-circle"style="color: aliceblue"></i>
+                   <b style="color: aliceblue"> Students</b>
+                </div>
+                <div class="card-body">
+                    @if($grade -> students -> isEmpty())
+                    <h3 style="text-align: center">No Data!</h3>
+                    @endif
+                        @foreach ($grade->students as $student)
+                        <div class="card mb-4" style="height:60px;margin-right: 10px10px;box-shadow: 1px 1px 20px #111111 ;border-radius: 20px;">
+                            <a href="/students/{{$student->id}}" class="student-list" style="text-decoration: none">
+                                <div class="card-body" style="padding: 4px 4px 4px 8px;margin: ">
+                                    <li class="list-group-item" style="display: flex;align-items: center"><div style="width:50px;height:50px;border-radius: 50%;
+                                     background-color: aqua; display: inline-block"><img src="{{ Vite::asset('resources/images/student.png') }}" style="width:100%;height:100%;
+                                     object-fit: cover " class="card-img-center" alt="{{$student->first_name}}"></div><div style="display: inline; align-items: center;justify-content: center;
+                                     margin-left: 30px" >{{$student->first_name}} {{$student->last_name}}</div></li>
+                                </div>
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6 mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-header bg-success text-white">
-                                <i class="fas fa-book me-1"></i>
-                                Subject Details
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-hover table-striped table-bordered">
-                                    <thead class="table-success">
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Subject Name</th>
-                                            <th>Subject Order</th>
-                                            <th>Subject Color</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($grade->subjects as $subject)
-                                            <tr>
-                                                <td>{{ $subject->id }}</td>
-                                                <td><a href="{{ url("/subjects/$subject->id") }}"
-                                                        class="text-decoration-none text-dark">{{ $subject->subject_name }}</a>
-                                                </td>
-                                                <td>{{ $subject->subject_order }}</td>
-                                                <td>{{ $subject->color }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
                 </div>
             </div>
         </div>
-    </main>
+        <div class="col-xl-6">
+            <div class="card mb-4" style="background-color: #374259;">
+                <div class="card-header">
+                    <i class="fas fa-book-open me-1" style="color: aliceblue;"></i>
+                   <b style="color: aliceblue;">Subject Information</b>
+                </div>
+                <div class="card-body">
+                    @if ($grade -> subjects -> isEmpty())
+                        <h3 class="text-center">No Data!</h3>
+                    @else
+                        @foreach ($grade -> subjects as $subject)
+                        <div style="margin-right: 10px;margin-bottom:10px; box-shadow:1px 1px 20px #111111; border-radius:20px">
+                            <a href="{{url('subjects/' . $subject -> id)}}" class="student-list text-decoration-none list-unstyled">
+                                <div class="card-body">
+                                    <li class="list-group-item" style="display: block;">{{$subject -> subject_name}}</li>
+                                </div>
+                            </a>
+                        </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+</main>
 </x-layout>
