@@ -9,8 +9,12 @@ use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 
+
 Route::get('/', function () {
-    return view('welcome');
+    $students=Student::paginate(15);
+    $subjects=Subject::paginate(15);
+    $grades=Grade::paginate(15);
+    return view('welcome',compact('students','subjects','grades'));
 });
 
 // Route::get('student',[StudentController::class,'index']);

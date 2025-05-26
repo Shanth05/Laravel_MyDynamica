@@ -15,7 +15,7 @@ class StudentController extends Controller
         // $name = $request->query('page');
         // dd($name);
 
-        $students=Student::paginate(20);
+        $students=Student::all();
     return view('student.index',compact('students'));
     
     }
@@ -25,7 +25,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view ("student.create");
     }
 
     /**
@@ -33,7 +33,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return ($request);
     }
 
     /**
@@ -43,6 +43,11 @@ class StudentController extends Controller
     {
         $student=Student::find($id);
         return view('student.show',compact('student'));
+
+        //     // Fetch the student with related grade and subjects
+        // $student = Student::with('grade', 'subjects')->findOrFail($id);
+
+        // return view('student.show', compact('student'));
     }
 
     /**
